@@ -21,3 +21,23 @@ if len(sys.argv) != 3:
 
 input_path = sys.argv[1]
 output_path = sys.argv[2]
+
+# ----------------------------
+# Spark session
+# ----------------------------
+spark = SparkSession.builder.appName("LocationVehiclePerformance").getOrCreate()
+
+# ----------------------------
+# Define schemas
+# ----------------------------
+rental_schema = StructType([
+    StructField("rental_id", StringType(), True),
+    StructField("user_id", StringType(), True),
+    StructField("vehicle_id", StringType(), True),
+    StructField("rental_start_time", StringType(), True),
+    StructField("rental_end_time", StringType(), True),
+    StructField("pickup_location", StringType(), True),
+    StructField("dropoff_location", StringType(), True),
+    StructField("total_amount", DoubleType(), True),
+])
+
