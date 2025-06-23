@@ -27,3 +27,30 @@ output_path = sys.argv[2]
 # Spark session
 # ----------------------------
 spark = SparkSession.builder.appName("UserTransactionMetrics").getOrCreate()
+
+
+# ----------------------------
+# Define schemas
+# ----------------------------
+rental_schema = StructType([
+    StructField("rental_id", StringType(), True),
+    StructField("user_id", StringType(), True),
+    StructField("vehicle_id", StringType(), True),
+    StructField("rental_start_time", StringType(), True),
+    StructField("rental_end_time", StringType(), True),
+    StructField("pickup_location", StringType(), True),
+    StructField("dropoff_location", StringType(), True),
+    StructField("total_amount", DoubleType(), True),
+])
+
+user_schema = StructType([
+    StructField("user_id", StringType(), True),
+    StructField("first_name", StringType(), True),
+    StructField("last_name", StringType(), True),
+    StructField("email", StringType(), True),
+    StructField("phone_number", StringType(), True),
+    StructField("driver_license_number", StringType(), True),
+    StructField("driver_license_expiry", StringType(), True),
+    StructField("creation_date", StringType(), True),
+    StructField("is_active", IntegerType(), True),
+])
