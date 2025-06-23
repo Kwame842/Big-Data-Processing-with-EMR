@@ -1,14 +1,14 @@
-# 🚗 Car Rental Data Processing Pipeline - Project Documentation
+# Car Rental Data Processing Pipeline - Project Documentation
 
-## 📌 Project Overview
+## Project Overview
 
 This project implements a scalable and automated **Big Data Processing Pipeline** for a **Car Rental Marketplace** using AWS services. It leverages **Apache Spark on EMR** to process raw CSV data, **AWS Glue** for cataloging, **Amazon Athena** for querying, and **Step Functions** for orchestration.
 
 ---
 
-## 🧱 Architecture
+## Architecture
 
-### ✅ AWS Services Used
+### AWS Services Used
 
 * **Amazon S3**: Raw and processed data storage
 * **Amazon EMR**: Spark cluster for transformation jobs
@@ -18,7 +18,7 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 
 ---
 
-## 📁 Data Sources
+## Data Sources
 
 Located in: `s3://car-rental-data-project/raw/`
 
@@ -31,7 +31,7 @@ Located in: `s3://car-rental-data-project/raw/`
 
 ---
 
-## 📂 S3 Bucket Structure
+## S3 Bucket Structure
 
 ```
 s3://car-rental-data-project/
@@ -55,7 +55,7 @@ s3://car-rental-data-project/
 
 ---
 
-## 🔥 PySpark Jobs
+## PySpark Jobs
 
 ### 1️⃣ job1\_location\_metrics.py
 
@@ -93,7 +93,7 @@ s3://car-rental-data-project/
 
 ---
 
-## 🧠 Glue Crawlers
+## Glue Crawlers
 
 ### Database: `car_rental_db`
 
@@ -106,7 +106,7 @@ s3://car-rental-data-project/
 
 ---
 
-## 🔍 Athena Setup
+## Athena Setup
 
 1. **Set Query Result Location**: `s3://car-rental-data-project/athena-results/`
 2. **Select Database**: `car_rental_db`
@@ -139,7 +139,7 @@ ORDER BY rental_date;
 
 ---
 
-## 🔄 Step Functions Automation
+## Step Functions Automation
 
 ### Workflow:
 
@@ -165,7 +165,7 @@ ORDER BY rental_date;
 
 ---
 
-## ✅ Execution Checklist
+## Execution Checklist
 
 | Task                          | Status |
 | ----------------------------- | ------ |
@@ -180,7 +180,7 @@ ORDER BY rental_date;
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * Ensure timestamps are parsed using `dd/MM/yyyy HH:mm`
 * Partitioning by date can improve performance
@@ -188,7 +188,7 @@ ORDER BY rental_date;
 
 ---
 
-## 🧩 Next Enhancements (Optional)
+##  Next Enhancements (Optional)
 
 * Add data quality checks (e.g., using Deequ)
 * Schedule runs using EventBridge + Step Functions
@@ -196,6 +196,6 @@ ORDER BY rental_date;
 
 ---
 
-## 👨‍💻 Contact / Support
+##  Contact / Support
 
 For questions or contributions, reach out to the project team or your Data Engineering instructor.
