@@ -21,3 +21,9 @@ if len(sys.argv) != 3:
 
 input_path = sys.argv[1]
 output_path = sys.argv[2]
+
+
+# ----------------------------
+# Spark session
+# ----------------------------
+spark = SparkSession.builder.appName("UserTransactionMetrics").getOrCreate()
