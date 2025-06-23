@@ -5,3 +5,9 @@ from pyspark.sql.types import *
 from pyspark.sql.functions import col, sum, countDistinct, avg, max, min, to_timestamp, unix_timestamp
 import sys
 import logging
+
+# ----------------------------
+# Logging setup
+# ----------------------------
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("LocationVehicleMetrics")
