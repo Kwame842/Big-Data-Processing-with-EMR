@@ -11,3 +11,13 @@ import logging
 # ----------------------------
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("LocationVehicleMetrics")
+
+# ----------------------------
+# Argument parsing
+# ----------------------------
+if len(sys.argv) != 3:
+    print("Usage: spark-submit job1_location_metrics.py <input_path> <output_path>")
+    sys.exit(1)
+
+input_path = sys.argv[1]
+output_path = sys.argv[2]
