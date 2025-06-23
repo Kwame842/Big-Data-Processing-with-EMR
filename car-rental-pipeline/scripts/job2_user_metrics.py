@@ -18,3 +18,6 @@ logger = logging.getLogger("UserTransactionMetrics")
 if len(sys.argv) != 3:
     print("Usage: spark-submit job2_user_metrics.py <input_path> <output_path>")
     sys.exit(1)
+
+input_path = sys.argv[1]
+output_path = sys.argv[2]
