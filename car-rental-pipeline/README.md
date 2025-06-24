@@ -8,6 +8,8 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 
 ## Architecture
 
+![Architecture Diagram](diagram/Architecture Diagram.png)
+
 ### AWS Services Used
 
 * **Amazon S3**: Raw and processed data storage
@@ -112,6 +114,9 @@ s3://car-rental-data-project/
 2. **Select Database**: `car_rental_db`
 3. **Sample Queries**:
 
+
+![Athena Queries](screenshots/EMR-Athena-Queries.png)
+
 ```sql
 -- Highest revenue location
 SELECT pickup_location, total_revenue
@@ -154,6 +159,8 @@ ORDER BY rental_date;
 
   * `elasticmapreduce:AddStep`
   * `glue:StartCrawler`
+ 
+![Step functions](screenshots/EMR_Running-Step-Functions.png)
 
 ### How to Run:
 
