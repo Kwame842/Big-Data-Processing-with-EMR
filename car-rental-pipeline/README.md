@@ -170,7 +170,7 @@ ORDER BY rental_date;
 
 ---
 
-![Step functions](screenshots/EMR_Running-Step-Functions.png)
+![Step functions](screenshots/EMR-Running-Step-Functions.png)
 
 ## Execution Checklist
 
