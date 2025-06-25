@@ -173,6 +173,7 @@ ORDER BY rental_date;
 
 ![Step functions](car-rental-pipeline/screenshots/StepFunctions-EMR.png)
 
+
 ## Execution Checklist
 
 | Task                          | Status |
@@ -185,6 +186,8 @@ ORDER BY rental_date;
 | Verify tables in Athena       | ✅      |
 | Run queries and validate KPIs | ✅      |
 | Automate with Step Functions  | ✅      |
+
+![Step functions](car-rental-pipeline/screenshots/Running-EMR-StepFunctions.png)
 
 ---
 
