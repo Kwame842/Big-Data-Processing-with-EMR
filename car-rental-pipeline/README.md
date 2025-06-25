@@ -7,7 +7,7 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 ---
 
 ## Architecture
-![Architecture Diagram](diagram/Architecture-Diagram.png)
+![Architecture Diagram](car-rental-pipeline/diagram/lab4-architecture.png)
 
 ### AWS Services Used
 
@@ -140,7 +140,7 @@ FROM daily_metrics
 ORDER BY rental_date;
 ```
 
-![Athena Queries](screenshots/EMR-Athena-Queries.png)
+![Athena Queries](car-rental-pipeline/screenshots/TopSpendingUsers.png)
 
 ---
 
@@ -171,7 +171,7 @@ ORDER BY rental_date;
 
 ---
 
-![Step functions](screenshots/EMR-Running-Step-Functions.png)
+![Step functions](car-rental-pipeline/screenshots/EMR-Running-Step-Functions.png)
 
 ## Execution Checklist
 
