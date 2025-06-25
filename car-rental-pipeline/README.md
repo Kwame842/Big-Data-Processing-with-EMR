@@ -7,7 +7,7 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 ---
 
 ## Architecture
-![Architecture Diagram](car-rental-pipeline/diagram/lab4-architecture.png)
+![Architecture Diagram](car-rental-pipeline/diagram/Lab4-architecture.png)
 
 ### AWS Services Used
 
