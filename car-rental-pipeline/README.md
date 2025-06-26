@@ -7,7 +7,7 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 ---
 
 ## Architecture
-![Architecture Diagram](diagram/Lab4-architecture.png)
+![Architecture Diagram](diagram/Lab4_architecture.png)
 
 ### AWS Services Used
 
