@@ -7,7 +7,7 @@ This project implements a scalable and automated **Big Data Processing Pipeline*
 ---
 
 ## Architecture
-![Architecture Diagram](car-rental-pipeline/diagram/Lab4-architecture.png)
+![Architecture Diagram](car-rental-pipeline/diagram/Lab4_architecture.png)
 
 ### AWS Services Used
 
@@ -171,7 +171,7 @@ ORDER BY rental_date;
 
 ---
 
-![Step functions](car-rental-pipeline/screenshots/StepFunctions-EMR.png)
+![Step functions](car-rental-pipeline/screenshots/EMR-StepFunctions-01.png)
 
 
 ## Execution Checklist
@@ -187,7 +187,6 @@ ORDER BY rental_date;
 | Run queries and validate KPIs | ✅      |
 | Automate with Step Functions  | ✅      |
 
-![Step functions](car-rental-pipeline/screenshots/Running-EMR-StepFunctions.png)
 
 ---
 
