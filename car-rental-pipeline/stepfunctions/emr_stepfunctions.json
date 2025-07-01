@@ -30,18 +30,28 @@
           "TerminationProtected": false,
           "Ec2SubnetId": "subnet-0e0fd1537c37c9e66"
         },
-        "JobFlowRole": "AmazonEMR-ServiceRole-20250622T115148",
-        "ServiceRole": "AmazonEMR-ServiceRole-20250622T115148",
+        "JobFlowRole": "EMR_EC2_DefaultRole",
+        "ServiceRole": "EMR_DefaultRole",
         "VisibleToAllUsers": true
       },
+      "ResultPath": "$.CreateClusterResult",
+      "Next": "Save ClusterId"
+    },
+    "Save ClusterId": {
+      "Type": "Pass",
+      "Parameters": {
+        "ClusterId.$": "$.CreateClusterResult.Cluster.Id"
+      },
+      "ResultPath": "$.ClusterInfo",
       "Next": "Add Spark Step 1"
     },
     "Add Spark Step 1": {
       "Type": "Task",
       "Resource": "arn:aws:states:::elasticmapreduce:addStep.sync",
       "TimeoutSeconds": 900,
+      "ResultPath": null,
       "Parameters": {
-        "ClusterId.$": "$.ClusterId",
+        "ClusterId.$": "$.ClusterInfo.ClusterId",
         "Step": {
           "Name": "Run job1_location_metrics",
           "ActionOnFailure": "CONTINUE",
@@ -73,22 +83,24 @@
           "ErrorEquals": [
             "States.ALL"
           ],
-          "Next": "Log Spark Step 1 Failure"
+          "ResultPath": "$.SparkStep1Error",
+          "Next": "Fail Spark Step 1"
         }
       ],
       "Next": "Add Spark Step 2"
     },
-    "Log Spark Step 1 Failure": {
-      "Type": "Pass",
-      "Result": "Spark Step 1 Failed",
-      "Next": "Add Spark Step 2"
+    "Fail Spark Step 1": {
+      "Type": "Fail",
+      "Error": "SparkStep1Failed",
+      "Cause": "Spark Step 1 failed and workflow terminated."
     },
     "Add Spark Step 2": {
       "Type": "Task",
       "Resource": "arn:aws:states:::elasticmapreduce:addStep.sync",
       "TimeoutSeconds": 900,
+      "ResultPath": null,
       "Parameters": {
-        "ClusterId.$": "$.ClusterId",
+        "ClusterId.$": "$.ClusterInfo.ClusterId",
         "Step": {
           "Name": "Run job2_user_metrics",
           "ActionOnFailure": "CONTINUE",
@@ -120,15 +132,16 @@
           "ErrorEquals": [
             "States.ALL"
           ],
-          "Next": "Log Spark Step 2 Failure"
+          "ResultPath": "$.SparkStep2Error",
+          "Next": "Fail Spark Step 2"
         }
       ],
       "Next": "Run Glue Crawlers"
     },
-    "Log Spark Step 2 Failure": {
-      "Type": "Pass",
-      "Result": "Spark Step 2 Failed",
-      "Next": "Run Glue Crawlers"
+    "Fail Spark Step 2": {
+      "Type": "Fail",
+      "Error": "SparkStep2Failed",
+      "Cause": "Spark Step 2 failed and workflow terminated."
     },
     "Run Glue Crawlers": {
       "Type": "Parallel",
