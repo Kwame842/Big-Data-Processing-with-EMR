@@ -171,9 +171,9 @@ ORDER BY rental_date;
 
 ---
 
-![Step functions](car-rental-pipeline/screenshots/EMR-04-1.png)
+![Step functions](car-rental-pipeline/screenshots/EMR-05-1.png)
 
-![Running Step functions](car-rental-pipeline/screenshots/EMR-04.png)
+![Running Step functions](car-rental-pipeline/screenshots/EMR-05.png)
 
 
 ## Execution Checklist
